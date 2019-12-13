@@ -434,8 +434,8 @@ $(function () {
 /*绑定新加载内容的点击事件*/
 function bind() {
     initArticle();
-    $(".article_number").text($("#yelog_site_posts_number").val());
-    $(".site_word_count").text($("#yelog_site_word_count").val());
+    $(".article_number").text($("#L1uFe1_site_posts_number").val());
+    $(".site_word_count").text($("#L1uFe1_site_word_count").val());
     $(".site_uv").text($("#busuanzi_value_site_uv").text());
     $("#busuanzi_value_site_uv").bind("DOMNodeInserted", function (e) {
         $(".site_uv").text($(this).text())
