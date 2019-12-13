@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>NetWork | Hexo测试</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="NetWork | Hexo测试">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="Web安全1.常见的网站漏洞有哪些？有跨站脚本攻击（XSS）、跨站请求伪造（CSRF）、点击劫持、SQL注入、DDOS攻击、DNS劫持 2.简要介绍一下XSS以及XSS如何防御跨站脚本攻击是说攻击者通过注入恶意的脚本，在用户浏览网页的时候进行攻击，比如获取cookie或者其他用户身份信息。可以分为存储型和反射型，存储型是攻击者输入一些数据并且存储到了数据库中，其他浏览者看到的时候进行攻击，反射型的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WebSecurity">
+<meta property="og:url" content="https:&#x2F;&#x2F;l1ufe1.github.io&#x2F;2019&#x2F;12&#x2F;13&#x2F;WebSecurity&#x2F;index.html">
+<meta property="og:site_name" content="Hexo测试">
+<meta property="og:description" content="Web安全1.常见的网站漏洞有哪些？有跨站脚本攻击（XSS）、跨站请求伪造（CSRF）、点击劫持、SQL注入、DDOS攻击、DNS劫持 2.简要介绍一下XSS以及XSS如何防御跨站脚本攻击是说攻击者通过注入恶意的脚本，在用户浏览网页的时候进行攻击，比如获取cookie或者其他用户身份信息。可以分为存储型和反射型，存储型是攻击者输入一些数据并且存储到了数据库中，其他浏览者看到的时候进行攻击，反射型的">
+<meta property="og:locale" content="cn">
+<meta property="article:published_time" content="2019-12-13T12:04:05.861Z">
+<meta property="article:modified_time" content="2019-11-24T14:10:24.000Z">
+<meta property="article:author" content="FEI">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.0.1" ></script>
+
+<meta name="generator" content="Hexo 4.1.1"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>FEI</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="rss" href="/atom.xml" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-rss"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="github" href="https://github.com/yelog" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="facebook" href="https://www.facebook.com/faker.tops" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-facebook"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+        <a title="instagram" href="https://www.facebook.com/faker.tops" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-instagram"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="reddit" href="https://www.reddit.com/user/yelog/" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-reddit"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="weibo" href="http://weibo.com/u/2307534817" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-weibo"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="jianshu" href="https://www.jianshu.com/u/ff56736de7cf" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-jianshu"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="zhihu" href="https://www.zhihu.com/people/jaytp/activities" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-zhihu"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+        <a title="oschina" href="https://my.oschina.net/yelog" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-oschina"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+        <a title="email" href="mailto:jaytp@qq.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="qq" href="http://wpa.qq.com/msgrd?v=3&uin=872336115&site=qq&menu=yes" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-qq"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="kugou" href="https://www.kugou.com/" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-kugou"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="neteasemusic" href="https://music.163.com/#/user/home?id=88151013" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-neteasemusic"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(15)</small></div></li>
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="15">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode==13){return false;}">
+        <input class="search" type="text" placeholder="Search..." autocomplete="off"id="local-search-input" >
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class=""
+           href="/2019/12/13/CS/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="CS">CS</span>
+            <span class="post-date" title="2019-12-13 20:04:05">2019/12/13</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/12/13/Angular/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Angular">Angular</span>
+            <span class="post-date" title="2019-12-13 20:04:05">2019/12/13</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/12/13/CSS/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="CSS">CSS</span>
+            <span class="post-date" title="2019-12-13 20:04:05">2019/12/13</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/12/13/HTML/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="HTML">HTML</span>
+            <span class="post-date" title="2019-12-13 20:04:05">2019/12/13</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/12/13/MobileWeb/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="MobileWeb">MobileWeb</span>
+            <span class="post-date" title="2019-12-13 20:04:05">2019/12/13</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/12/13/Node/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Node">Node</span>
+            <span class="post-date" title="2019-12-13 20:04:05">2019/12/13</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/12/13/Other/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Other">Other</span>
+            <span class="post-date" title="2019-12-13 20:04:05">2019/12/13</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/12/13/Performance/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Performance">Performance</span>
+            <span class="post-date" title="2019-12-13 20:04:05">2019/12/13</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/12/13/React/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="React">React</span>
+            <span class="post-date" title="2019-12-13 20:04:05">2019/12/13</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/12/13/SQL/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="SQL">SQL</span>
+            <span class="post-date" title="2019-12-13 20:04:05">2019/12/13</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/12/13/Vue/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Vue">Vue</span>
+            <span class="post-date" title="2019-12-13 20:04:05">2019/12/13</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/12/13/WebSecurity/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="WebSecurity">WebSecurity</span>
+            <span class="post-date" title="2019-12-13 20:04:05">2019/12/13</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/12/13/hello-world/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hello World">Hello World</span>
+            <span class="post-date" title="2019-12-13 17:28:50">2019/12/13</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/12/13/NetWork/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="NetWork">NetWork</span>
+            <span class="post-date" title="2019-12-13 20:04:05">2019/12/13</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/12/13/JavaScript/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="JavaScript">JavaScript</span>
+            <span class="post-date" title="2019-12-13 20:04:05">2019/12/13</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-NetWork" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">NetWork</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2019-11-24 22:10:24'>2019-12-13 20:04</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#网络部分"><span class="toc-text">网络部分</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-页面从输入URL到展现发生了什么"><span class="toc-text">1.页面从输入URL到展现发生了什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-cookie和session的异同"><span class="toc-text">2.cookie和session的异同</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-HTTP和HTTPS的区别"><span class="toc-text">3.HTTP和HTTPS的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-ssl加密使用了那种算法，如何加密"><span class="toc-text">4.ssl加密使用了那种算法，如何加密</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-TCP三次握手的过程，为什么是三次而不是两次或者四次？"><span class="toc-text">5.TCP三次握手的过程，为什么是三次而不是两次或者四次？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-TCP的四次挥手"><span class="toc-text">6.TCP的四次挥手</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-HTTP报文的格式，传输中以何种方式传输"><span class="toc-text">7.HTTP报文的格式，传输中以何种方式传输</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-常见的HTTP头部"><span class="toc-text">8.常见的HTTP头部</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-HTTP状态的简要分类"><span class="toc-text">9.HTTP状态的简要分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-HTTP状态码101、200、301、302、304的具体含义"><span class="toc-text">10.HTTP状态码101、200、301、302、304的具体含义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-301和302的区别"><span class="toc-text">11.301和302的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-简要介绍一次302的过程"><span class="toc-text">12.简要介绍一次302的过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-HTTP2-0的简要介绍"><span class="toc-text">13.HTTP2.0的简要介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-用户登陆过程的简要说明，如何判断用户是否登录？"><span class="toc-text">14.用户登陆过程的简要说明，如何判断用户是否登录？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15-tcp和udp的区别"><span class="toc-text">15.tcp和udp的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-udp的阻塞机制，如何处理"><span class="toc-text">16.udp的阻塞机制，如何处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#17-简要介绍一下socket协议"><span class="toc-text">17.简要介绍一下socket协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#18-get和post有什么区别？什么时候用get，什么时候用post"><span class="toc-text">18.get和post有什么区别？什么时候用get，什么时候用post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#19-什么是正向代理？什么是反向代理？"><span class="toc-text">19.什么是正向代理？什么是反向代理？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#20-介绍一下HTTPS的连接过程"><span class="toc-text">20.介绍一下HTTPS的连接过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#21-和缓存有关的请求头有哪些？优先级是怎样的？"><span class="toc-text">21.和缓存有关的请求头有哪些？优先级是怎样的？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#22-介绍一下DNS的查找过程？"><span class="toc-text">22.介绍一下DNS的查找过程？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#23-http连接性能优化，长连接，keep-alive"><span class="toc-text">23.http连接性能优化，长连接，keep-alive</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#24-https的详细过程，使用的加密算法，是对称加密算法还是非对称加密算法。md5、SHA、AES分别是对称加密的还是非对称加密的"><span class="toc-text">24.https的详细过程，使用的加密算法，是对称加密算法还是非对称加密算法。md5、SHA、AES分别是对称加密的还是非对称加密的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#25-https没有大规模应用的原因"><span class="toc-text">25.https没有大规模应用的原因</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#26-http2有哪些新特性？"><span class="toc-text">26.http2有哪些新特性？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#27-端口号的作用是什么？"><span class="toc-text">27.端口号的作用是什么？</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="网络部分"><a href="#网络部分" class="headerlink" title="网络部分"></a>网络部分</h2><h3 id="1-页面从输入URL到展现发生了什么"><a href="#1-页面从输入URL到展现发生了什么" class="headerlink" title="1.页面从输入URL到展现发生了什么"></a>1.页面从输入URL到展现发生了什么</h3><p>输入URL之后，需要寻找到这个url域名的服务器IP，为了找到这个IP，浏览器首先会寻找缓存，<br>查看缓存中是否有记录，缓存中查找的顺序是浏览器缓存、系统缓存、路由器缓存，缓存中没有则<br>查找系统的hosts文件中是否有记录，如果没有记录则会查询DNS服务器，得到服务器的IP地址之<br>后，浏览器根据这个IP以及相应的端口号，（如HTTP协议默认的端口号为80，HTTPS协议的默认<br>端口号为443，当然可以在url中指定端口号）构造一个HTTP请求，并将这个HTTP包请求封装在<br>一个TCP包中，（这个HTTP请求报文会包含这次请求的信息，主要是请求方法、请求的说明和请<br>求附带的数据），这个tcp包依次会经过传输层、网络层、数据链路层、物理层到达服务器，服<br>务器解析这个请求来做出响应，（我们假定这个url是一个类似谷歌、淘宝这样的网站首页，而<br>不是简单的文件），服务器返回相应的HTML给浏览器，因为HTML是一个树形结构，浏览器根据<br>这个HTML来构建DOM树在DOM树的构建过程中如果遇到js脚本和外部js连接，则会停止构建DOM<br>树来执行和下载相应的代码，这会造成阻塞，这也就是为什么推荐js代码应该放在HTML代码的后<br>面，之后根据外部样式、内部样式、内联样式构建一个CSS对象模型树（CSSOM树），构建完成之<br>后和DOM树合并为渲染树，这里主要做的是排除非视觉节点，如script、meta标签和排除display<br>为none的节点，之后就是进行布局，布局主要是确定各个元素的位置和尺寸，之后就是渲染页面。<br>因为HTML文件中会含有图片、音频、视频等资源，在解析DOM的过程中，遇到这些都会进行并行下<br>载，当然浏览器对每个域的并行下载数量有一定的限制，一般是4-6个，当然在这些所有请求中我们<br>还需要关注的就是缓存，缓存一般通过Cache-Control、Last-Modify、Expires等首部字段控制。<br>Cache-Control和Expires的区别在于Cache-Control使用相对时间，Expires使用的是基于服务器<br>端的绝对时间，因为存在时差问题，一般采用Cache-Control，在请求这些有设置了缓存的数据时，会先<br>查看是否过期，如果没有过期则直接使用本地缓存，过期则请求并在服务器校验文件是否修改，如果上一次<br>响应设置了ETag值会在这次请求的时候作为If-None-Match的值交给服务器校验，如果一致，继续校验<br>Last-Modified，没有设置ETag则直接验证Last-Modified，再决定是否返回304</p>
+<p>参考：</p>
+<p><a href="http://ce.sysu.edu.cn/hope/Item/166703.aspx" target="_blank" rel="noopener">缓存策略</a></p>
+<p><a href="https://www.zybuluo.com/yangfch3/note/671516" target="_blank" rel="noopener">浏览器内核、JS 引擎、页面呈现原理及其优化</a></p>
+<p><a href="https://book.douban.com/subject/10746113/" target="_blank" rel="noopener">HTTP权威指南</a></p>
+<h3 id="2-cookie和session的异同"><a href="#2-cookie和session的异同" class="headerlink" title="2.cookie和session的异同"></a>2.cookie和session的异同</h3><p>cookie和session都可以用来存储用户信息，cookie存放于客户端，session存放于服务端，因为cookie存放于客户端<br>有可能被窃取，因此cookie一般用来存放不敏感的信息，如用户设置的网站主题等，敏感的信息采用session存储，如用户<br>的登陆信息，session可以存放于文件、数据库、内存中都可以，cookie可以服务端响应的时候设置，也可以客户端通过js设置<br>cookie会在请求时在http首部发送给客户端，cookie一般在客户端有大小限制，一般为4k。</p>
+<h3 id="3-HTTP和HTTPS的区别"><a href="#3-HTTP和HTTPS的区别" class="headerlink" title="3.HTTP和HTTPS的区别"></a>3.HTTP和HTTPS的区别</h3><p>首先HTTP和HTTPS的默认端口号就不一样，HTTP的默认端口号为80，HTTPS的默认端口号为443，HTTP在传输过程中使用的是明文<br>传输，内容可能被窃取，而且无法验证通信方的身份，还有可能遭遇身份伪装，而HTTPS在应用层和传输层之间增加了ssl协议用来加密<br>内容，因此通过证书验证来验证身份，即使数据被窃取也无法解密，数据的传输更加安全。</p>
+<h3 id="4-ssl加密使用了那种算法，如何加密"><a href="#4-ssl加密使用了那种算法，如何加密" class="headerlink" title="4.ssl加密使用了那种算法，如何加密"></a>4.ssl加密使用了那种算法，如何加密</h3><h3 id="5-TCP三次握手的过程，为什么是三次而不是两次或者四次？"><a href="#5-TCP三次握手的过程，为什么是三次而不是两次或者四次？" class="headerlink" title="5.TCP三次握手的过程，为什么是三次而不是两次或者四次？"></a>5.TCP三次握手的过程，为什么是三次而不是两次或者四次？</h3><p>第一次握手：客户端发送一个syn（同步）包（syn=x）给服务器，进入SYN_SEND状态，等待服务器确认</p>
+<p>第二次握手：服务端收到客户端发送的同步包，确认客户端的同步请求（ack=x+1）,同时也发送一个同步包，<br>也就是一个ACK包+SYN包服务器进入SYN_RECV状态</p>
+<p>第三次握手：客户端收到服务器的SYN+ACK包，向服务器发送一个确认包，此包发送完毕，客户端和服务器进入<br>ESTABLISHED状态，完成三次握手</p>
+<p>不是两次是为了防止已经失效的连接请求报文段突然又传送到了服务端，因而产生错误，比如有一个因网络延迟的请求<br>发送到了服务端，服务端收到这个同步报文之后进行确认，如果此时是两次握手，那么此时连接建立，但是客户端并没有发出<br>建立连接的请求，服务端却一直等待客户端发送数据，这样服务端的资源就白白浪费了。</p>
+<p>不是四次的话是因为完全没有必要，三次已经足够了</p>
+<p>参考：</p>
+<p><a href="https://www.nowcoder.com/discuss/1937" target="_blank" rel="noopener">计算机网络之面试常考</a></p>
+<p><a href="http://blog.csdn.net/xumin330774233/article/details/14448715" target="_blank" rel="noopener">tcp为什么要三次握手，而不能二次握手？</a></p>
+<p><a href="https://www.zhihu.com/question/24853633" target="_blank" rel="noopener">TCP 为什么是三次握手，为什么不是两次或四次？</a></p>
+<h3 id="6-TCP的四次挥手"><a href="#6-TCP的四次挥手" class="headerlink" title="6.TCP的四次挥手"></a>6.TCP的四次挥手</h3><p>第一次：主动关闭方发送一个FIN包，用来关闭主动关闭方到被动关闭方的数据传送，也就是告诉另一方我不再发送数据了，但此时仍可以接收数据</p>
+<p>第二次：被动关闭方收到FIN包之后，发送一个确认（ACK）包给对方</p>
+<p>第三次：被动关闭方发送一个FIN包，告诉对方不带发送数据</p>
+<p>第四次：主动关闭方收到FIN包之后，发送一个ACK包给对方，至此完成四次挥手</p>
+<h3 id="7-HTTP报文的格式，传输中以何种方式传输"><a href="#7-HTTP报文的格式，传输中以何种方式传输" class="headerlink" title="7.HTTP报文的格式，传输中以何种方式传输"></a>7.HTTP报文的格式，传输中以何种方式传输</h3><p>HTTP报文分为三个部分，起始行、首部和主体，其中起始行和首部以一个回车和换行符分隔，首部和主体以一个空行分隔，其中起始行是对这次HTTP请求或者响应<br>的描述，请求报文的起始行包括使用的HTTP方法、请求的url地址、HTTP版本，响应报文的起始行包括HTTP的版本，HTTP状态码，http状态码的描述，首部也<br>就是常说的HTTP头部，如Date、Cookie、Content-Type等，主体是这次请求或响应的数据，传输中以明文传输。</p>
+<p>参考：</p>
+<p><a href="https://book.douban.com/subject/10746113/" target="_blank" rel="noopener">HTTP权威指南</a></p>
+<h3 id="8-常见的HTTP头部"><a href="#8-常见的HTTP头部" class="headerlink" title="8.常见的HTTP头部"></a>8.常见的HTTP头部</h3><p>可以将HTTP首部分为通用首部、请求首部、响应首部、实体首部，通用首部表示一些通用信息，如Date表示报文创建时间，请求首部就是请求报文中<br>独有的，如cookie、和缓存相关的If-Modified-Since，响应首部就是响应报文中独有的，如set-cookie和重定向有关的location，实体首部用来<br>描述实体部分，如Allow用来描述可执行的请求方法，Content-Type描述主体类型，Content-Encoding描述主体的编码方式</p>
+<p>参考：</p>
+<p><a href="https://book.douban.com/subject/10746113/" target="_blank" rel="noopener">HTTP权威指南</a></p>
+<h3 id="9-HTTP状态的简要分类"><a href="#9-HTTP状态的简要分类" class="headerlink" title="9.HTTP状态的简要分类"></a>9.HTTP状态的简要分类</h3><p>可以按照HTTP状态码的第一个数字分类，1xx表示信息，2xx表示成功，3xx表示重定向，这里需要注意的是304，表示未修改，<br>4xx表示客户端错误，最常见的是404，5xx表示服务端错误</p>
+<h3 id="10-HTTP状态码101、200、301、302、304的具体含义"><a href="#10-HTTP状态码101、200、301、302、304的具体含义" class="headerlink" title="10.HTTP状态码101、200、301、302、304的具体含义"></a>10.HTTP状态码101、200、301、302、304的具体含义</h3><p>101：切换协议 200：正常，OK，301：永久重定向，302：临时重定向，304：未修改</p>
+<h3 id="11-301和302的区别"><a href="#11-301和302的区别" class="headerlink" title="11.301和302的区别"></a>11.301和302的区别</h3><h3 id="12-简要介绍一次302的过程"><a href="#12-简要介绍一次302的过程" class="headerlink" title="12.简要介绍一次302的过程"></a>12.简要介绍一次302的过程</h3><p>用户请求一个url，服务器处理这个url，设置这个url需要重定向，返回用户一个302响应，并在http头部设置location字段为新的地址，<br>浏览器得到这个响应，根据location中新的地址重新发起一次请求。</p>
+<h3 id="13-HTTP2-0的简要介绍"><a href="#13-HTTP2-0的简要介绍" class="headerlink" title="13.HTTP2.0的简要介绍"></a>13.HTTP2.0的简要介绍</h3><h3 id="14-用户登陆过程的简要说明，如何判断用户是否登录？"><a href="#14-用户登陆过程的简要说明，如何判断用户是否登录？" class="headerlink" title="14.用户登陆过程的简要说明，如何判断用户是否登录？"></a>14.用户登陆过程的简要说明，如何判断用户是否登录？</h3><p>用户输入用户名和密码，通过post请求将密码和用户名发送给服务器，服务器比对收到的用户名、密码和数据库中的数据进行比对，不一致则做出响应，<br>反馈信息给客户端，如果比对一致则服务端生成一个session，这个session可以存储在内存、文件、数据库中，同时生成一个与之一一对应的sessionID<br>作为cookie发送给客户端，比对成功之后反馈信息，这时一般会进行一次重定向，重定向至登陆之后的默认页面。判断用户登录则是根据这个sessionID，每次请求<br>会先检查有没有这次类似sessionID的cookie发送过来，没有则认为没有登录，有则是否有相应的session，这个session是否过期等，来判断用户是否登录，<br>登录是否过期。</p>
+<h3 id="15-tcp和udp的区别"><a href="#15-tcp和udp的区别" class="headerlink" title="15.tcp和udp的区别"></a>15.tcp和udp的区别</h3><p>TCP面向连接的、提供可靠传输的协议，而UDP则是面向非连接。不可靠传输的协议，之所以说TCP是可靠的传输协议是因为TCP协议在传输数据之前有一个确认双方是否<br>连接的过程，而UDP没有，也正是因此在传输速度方面，UDP更快。因此需要可靠传输需要选用TCP，不需要可靠传输情况下选择UDP。</p>
+<h3 id="16-udp的阻塞机制，如何处理"><a href="#16-udp的阻塞机制，如何处理" class="headerlink" title="16.udp的阻塞机制，如何处理"></a>16.udp的阻塞机制，如何处理</h3><h3 id="17-简要介绍一下socket协议"><a href="#17-简要介绍一下socket协议" class="headerlink" title="17.简要介绍一下socket协议"></a>17.简要介绍一下socket协议</h3><h3 id="18-get和post有什么区别？什么时候用get，什么时候用post"><a href="#18-get和post有什么区别？什么时候用get，什么时候用post" class="headerlink" title="18.get和post有什么区别？什么时候用get，什么时候用post"></a>18.get和post有什么区别？什么时候用get，什么时候用post</h3><p>get用来请求数据，post用来提交数据，form表单使用get时，数据会以querystring形式存在url中，因而不够安全也存在数据大小限制，而post不会，post将数据<br>存放在HTTP报文体中，获取数据应该使用get，提交数据应该使用post。</p>
+<p><strong>这个问题答案存疑，网上有很多种说法，但对于初级面试应该够了</strong></p>
+<p>参考：</p>
+<p><a href="https://www.zhihu.com/question/28586791" target="_blank" rel="noopener">get和post区别？</a></p>
+<p><a href="http://www.cnblogs.com/hyddd/archive/2009/03/31/1426026.html" target="_blank" rel="noopener">浅谈HTTP中Get与Post的区别</a></p>
+<p><a href="http://www.cnblogs.com/nankezhishi/archive/2012/06/09/getandpost.html" target="_blank" rel="noopener">GET和POST有什么区别？及为什么网上的多数答案都是错的。</a></p>
+<p><a href="http://www.cnblogs.com/ldp615/archive/2012/07/27/http-get-post.html" target="_blank" rel="noopener">也谈 GET 和 POST 的区别</a></p>
+<h3 id="19-什么是正向代理？什么是反向代理？"><a href="#19-什么是正向代理？什么是反向代理？" class="headerlink" title="19.什么是正向代理？什么是反向代理？"></a>19.什么是正向代理？什么是反向代理？</h3><p>正向代理就是客户端向代理服务器发送请求，并且指定目标服务器，之后代理向目标服务器转交并且将获得的内容返回给客户端。比如翻墙<br>反向代理的话代理会判断请求走向何处，并将请求转交给客户端，客户端只会觉得这个代理是一个真正的服务器。如负载均衡。</p>
+<p><a href="https://zhuanlan.zhihu.com/p/25423394" target="_blank" rel="noopener">正向代理和反向代理的区别</a></p>
+<h3 id="20-介绍一下HTTPS的连接过程"><a href="#20-介绍一下HTTPS的连接过程" class="headerlink" title="20.介绍一下HTTPS的连接过程"></a>20.介绍一下HTTPS的连接过程</h3><h3 id="21-和缓存有关的请求头有哪些？优先级是怎样的？"><a href="#21-和缓存有关的请求头有哪些？优先级是怎样的？" class="headerlink" title="21.和缓存有关的请求头有哪些？优先级是怎样的？"></a>21.和缓存有关的请求头有哪些？优先级是怎样的？</h3><p>和缓存有关的请求头有Cache-Control、If-Match、If-None-Match、If-Modified-Since、If-Unmodified-Since，在缓存中<br>总体来说是Cache-Control优先于Expires，Cache-Control中会需要检测Cache-Control是否过期，过期的话检验会优先检测Etag，<br>也就是If-Match、If-None-Match,不一致则验证Last-Modify请求头也就是If-Modified-Since、If-Unmodified-Since。</p>
+<p>参考：</p>
+<p><a href="http://www.imweb.io/topic/5795dcb6fb312541492eda8c" target="_blank" rel="noopener">HTTP缓存控制小结</a></p>
+<h3 id="22-介绍一下DNS的查找过程？"><a href="#22-介绍一下DNS的查找过程？" class="headerlink" title="22.介绍一下DNS的查找过程？"></a>22.介绍一下DNS的查找过程？</h3><h3 id="23-http连接性能优化，长连接，keep-alive"><a href="#23-http连接性能优化，长连接，keep-alive" class="headerlink" title="23.http连接性能优化，长连接，keep-alive"></a>23.http连接性能优化，长连接，keep-alive</h3><h3 id="24-https的详细过程，使用的加密算法，是对称加密算法还是非对称加密算法。md5、SHA、AES分别是对称加密的还是非对称加密的"><a href="#24-https的详细过程，使用的加密算法，是对称加密算法还是非对称加密算法。md5、SHA、AES分别是对称加密的还是非对称加密的" class="headerlink" title="24.https的详细过程，使用的加密算法，是对称加密算法还是非对称加密算法。md5、SHA、AES分别是对称加密的还是非对称加密的"></a>24.https的详细过程，使用的加密算法，是对称加密算法还是非对称加密算法。md5、SHA、AES分别是对称加密的还是非对称加密的</h3><h3 id="25-https没有大规模应用的原因"><a href="#25-https没有大规模应用的原因" class="headerlink" title="25.https没有大规模应用的原因"></a>25.https没有大规模应用的原因</h3><h3 id="26-http2有哪些新特性？"><a href="#26-http2有哪些新特性？" class="headerlink" title="26.http2有哪些新特性？"></a>26.http2有哪些新特性？</h3><h3 id="27-端口号的作用是什么？"><a href="#27-端口号的作用是什么？" class="headerlink" title="27.端口号的作用是什么？"></a>27.端口号的作用是什么？</h3><p>作用是区分服务类别和同一时间进行多个会话</p>
+<p>参考：</p>
+<p><a href="https://www.2cto.com/net/201203/124616.html" target="_blank" rel="noopener">端口号的作用及常见端口号用途说明</a></p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>NetWork</p>
+    
+    <p><span class="copy-title">本文作者:</span><a  title="FEI">FEI</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-12-13, 20:04:05</p>
+    <p><span class="copy-title">最后更新:</span>2019-11-24, 22:10:24</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/12/13/NetWork/" title="NetWork">https://l1ufe1.github.io/2019/12/13/NetWork/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2016-2019 Yelog</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+<div class="acParent"></div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': [],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().split('\n').length - 1, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: #fafafa;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("https://i.loli.net/2019/07/22/5d3521411f3f169375.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

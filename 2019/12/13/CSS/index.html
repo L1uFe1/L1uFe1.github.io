@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Hexo测试</title>
+  <title>CSS | Hexo测试</title>
   <meta name="keywords" content="">
-  <meta name="description" content="Hexo测试">
+  <meta name="description" content="CSS | Hexo测试">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Web安全1.常见的网站漏洞有哪些？有跨站脚本攻击（XSS）、跨站请求伪造（CSRF）、点击劫持、SQL注入、DDOS攻击、DNS劫持 2.简要介绍一下XSS以及XSS如何防御跨站脚本攻击是说攻击者通过注入恶意的脚本，在用户浏览网页的时候进行攻击，比如获取cookie或者其他用户身份信息。可以分为存储型和反射型，存储型是攻击者输入一些数据并且存储到了数据库中，其他浏览者看到的时候进行攻击，反射型的">
 <meta property="og:type" content="article">
@@ -52,7 +52,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -389,12 +389,43 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-CSS" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于叶落阁"><span class="toc-text">关于叶落阁</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">CSS</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2019-11-24 22:10:24'>2019-12-13 20:04</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS-3-部分"><span class="toc-text">CSS(3)部分</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-水平居中的方法"><span class="toc-text">1.水平居中的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-垂直居中的方法"><span class="toc-text">2.垂直居中的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-如何实现一个自适应的正方形"><span class="toc-text">3.如何实现一个自适应的正方形</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-简要介绍一下flex布局"><span class="toc-text">4.简要介绍一下flex布局</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-如何实现两列布局"><span class="toc-text">5.如何实现两列布局</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-简要介绍一下CSS3的新特性"><span class="toc-text">6.简要介绍一下CSS3的新特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-如何使用CSS实现硬件加速？"><span class="toc-text">7.如何使用CSS实现硬件加速？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-重绘和回流（重排）是什么，如何避免？"><span class="toc-text">8.重绘和回流（重排）是什么，如何避免？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-说一说你了解的圣杯布局和双飞翼布局？"><span class="toc-text">9.说一说你了解的圣杯布局和双飞翼布局？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-说一说css3的animation"><span class="toc-text">10.说一说css3的animation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-绝对定位和相对定位的区别？"><span class="toc-text">11.绝对定位和相对定位的区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-说一下你了解的CSS选择器？"><span class="toc-text">12.说一下你了解的CSS选择器？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-BFC是什么？介绍一下，如何触发BFC？"><span class="toc-text">13.BFC是什么？介绍一下，如何触发BFC？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-CSS3动画如何实现暂停？"><span class="toc-text">14.CSS3动画如何实现暂停？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15-说一说你知道哪些伪类选择器？"><span class="toc-text">15.说一说你知道哪些伪类选择器？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-简要介绍一下一种css预处理器？"><span class="toc-text">16.简要介绍一下一种css预处理器？</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -407,36 +438,85 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><p>喜欢写Blog的人，会经历三个阶段。</p>
-<blockquote>
-<p>第一阶段，刚接触Blog，觉得很新鲜，试着选择一个免费空间来写。</p>
-</blockquote>
-<blockquote>
-<p>第二阶段，发现免费空间限制太多，就自己购买域名和空间，搭建独立博客。</p>
-</blockquote>
-<blockquote>
-<p>第三阶段，觉得独立博客的管理太麻烦，最好在保留控制权的前提下，让别人来管，自己只负责写文章。</p>
-</blockquote>
-<p>我们每个人的在网络上产生的数据越来越多，这些信息是我们在互联网上存在过的痕迹，值得我们认真对待。但是它们被分散分布在各个网站上。很多时候我们很难将它们聚合在一起，而且各个网站的信息排布方式也没有办法自由控制，所以我们需要一个可以由自己主宰的空间——博客。</p>
-<p>通过博客，我们可以记录自己的生活和成长的轨迹。它不像 Twitter 那样碎片化，也不像 Facebook 那样关系化，它是私人的空间。</p>
-<h2 id="关于叶落阁"><a href="#关于叶落阁" class="headerlink" title="关于叶落阁"></a>关于叶落阁</h2><p><strong>叶落阁</strong> 是阿杰（杨玉杰）的个人站。</p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源</p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)、作者(@作者)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
-</ul>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="CSS-3-部分"><a href="#CSS-3-部分" class="headerlink" title="CSS(3)部分"></a>CSS(3)部分</h2><h3 id="1-水平居中的方法"><a href="#1-水平居中的方法" class="headerlink" title="1.水平居中的方法"></a>1.水平居中的方法</h3><p>1.元素为行内元素，设置父元素text-align:center</p>
+<p>2.如果元素宽度固定，可以设置左右margin为auto;</p>
+<p>3.如果元素为绝对定位，设置父元素position为relative，元素设left:0;right:0;margin:auto;</p>
+<p>4.使用flex-box布局，指定justify-content属性为center</p>
+<p>5.display设置为tabel-ceil</p>
+<h3 id="2-垂直居中的方法"><a href="#2-垂直居中的方法" class="headerlink" title="2.垂直居中的方法"></a>2.垂直居中的方法</h3><p>1.将显示方式设置为表格，display:table-cell,同时设置vertial-align：middle</p>
+<p>2.使用flex布局，设置为align-item：center</p>
+<p>3.绝对定位中设置bottom:0,top:0,并设置margin:auto</p>
+<p>4.绝对定位中固定高度时设置top:50%，margin-top值为高度一半的负值</p>
+<p>5.文本垂直居中设置line-height为height值</p>
+<p>参考：</p>
+<p>1.<a href="https://www.qianduan.net/css-to-achieve-the-vertical-center-of-the-five-kinds-of-methods/" target="_blank" rel="noopener">CSS实现垂直居中的5种方法</a></p>
+<p>2.<a href="https://juejin.im/post/58f818bbb123db006233ab2a" target="_blank" rel="noopener">16种方法实现水平居中垂直居中</a></p>
+<ol start="3">
+<li><a href="https://css-tricks.com/centering-css-complete-guide/" target="_blank" rel="noopener">Centering in CSS: A Complete Guide</a></li>
+</ol>
+<h3 id="3-如何实现一个自适应的正方形"><a href="#3-如何实现一个自适应的正方形" class="headerlink" title="3.如何实现一个自适应的正方形"></a>3.如何实现一个自适应的正方形</h3><p>利用padding设置为百分比时是相对于父级元素的，因此同时设置width与padding-top(padding-bottom)为同一个百分数，<br>并且设置height:0即可实现一个正方形。</p>
+<h3 id="4-简要介绍一下flex布局"><a href="#4-简要介绍一下flex布局" class="headerlink" title="4.简要介绍一下flex布局"></a>4.简要介绍一下flex布局</h3><h3 id="5-如何实现两列布局"><a href="#5-如何实现两列布局" class="headerlink" title="5.如何实现两列布局"></a>5.如何实现两列布局</h3><p>1.将元素的display设置为行内元素</p>
+<p>2.两个元素全部使用浮动</p>
+<p>3.一个元素左浮动，第二个元素不便，同时设置一个margin-left值</p>
+<p>4.使用flex-box布局</p>
+<h3 id="6-简要介绍一下CSS3的新特性"><a href="#6-简要介绍一下CSS3的新特性" class="headerlink" title="6.简要介绍一下CSS3的新特性"></a>6.简要介绍一下CSS3的新特性</h3><p>可以对CSS3的新特性做一个简单的分类，在布局方面新增了flex布局，在选择器方面新增了例如:first-of-type,nth-child等选择器，<br>在盒模型方面添加了box-sizing来改变盒模型，在动画方面增加了animation、2d变换、3d变换等。在颜色方面添加透明、rgba等，在字体方面<br>允许嵌入字体和设置字体阴影，同时当然也有盒子的阴影，最后还有关键的媒体查询。</p>
+<h3 id="7-如何使用CSS实现硬件加速？"><a href="#7-如何使用CSS实现硬件加速？" class="headerlink" title="7.如何使用CSS实现硬件加速？"></a>7.如何使用CSS实现硬件加速？</h3><p>硬件加速是指通过创建独立的复合图层，让GPU来渲染这个图层，从而提高性能，<br>一般触发硬件加速的CSS属性有transform、opacity、filter，为了避免2D动画在<br>开始和结束的时候的repaint操作，一般使用tranform:translateZ(0)</p>
+<p>参考：</p>
+<p><a href="http://www.cnblogs.com/shytong/p/5419565.html" target="_blank" rel="noopener">CSS动画原理及硬件加速</a></p>
+<p><a href="https://www.w3cplus.com/css3/introduction-to-hardware-acceleration-css-animations.html" target="_blank" rel="noopener">CSS动画之硬件加速</a></p>
+<p><a href="https://div.io/topic/1348" target="_blank" rel="noopener">CSS3硬件加速也有坑！！！</a></p>
+<h3 id="8-重绘和回流（重排）是什么，如何避免？"><a href="#8-重绘和回流（重排）是什么，如何避免？" class="headerlink" title="8.重绘和回流（重排）是什么，如何避免？"></a>8.重绘和回流（重排）是什么，如何避免？</h3><p>DOM的变化影响到了元素的几何属性（宽高）,浏览器重新计算元素的几何属性，其他元素的几何<br>属性和位置也会受到影响，浏览器需要重新构造渲染树，这个过程称为重排，浏览器将受到影响的部分<br>重新绘制到屏幕上的过程称为重绘。引起重排的原因有1.添加或者删除可见的DOM元素，2.元素位置、<br>尺寸、内容改变，3.浏览器页面初始化，4.浏览器窗口尺寸改变，重排一定重绘，重绘不一定重排，减少<br>重绘和重排的方法：1.不在布局信息改变时做DOM查询，2.使用cssText或者className一次性改变属性<br>3.使用fragment，4.对于多次重排的元素，如动画，使用绝对定位脱离文档流，让他的改变不影响到其他<br>元素</p>
+<p>参考：</p>
+<p>1.<a href="http://www.cnblogs.com/zichi/p/4720000.html" target="_blank" rel="noopener">高性能JavaScript 重排与重绘</a></p>
+<p>2.<a href="http://www.ruanyifeng.com/blog/2015/09/web-page-performance-in-depth.html" target="_blank" rel="noopener">网页性能管理详解</a></p>
+<p>3.<a href="https://juejin.im/entry/582f16fca22b9d006b7afd89" target="_blank" rel="noopener">重排重绘，看这一篇就够了</a></p>
+<h3 id="9-说一说你了解的圣杯布局和双飞翼布局？"><a href="#9-说一说你了解的圣杯布局和双飞翼布局？" class="headerlink" title="9.说一说你了解的圣杯布局和双飞翼布局？"></a>9.说一说你了解的圣杯布局和双飞翼布局？</h3><h3 id="10-说一说css3的animation"><a href="#10-说一说css3的animation" class="headerlink" title="10.说一说css3的animation"></a>10.说一说css3的animation</h3><p>css3的animation是css3新增的动画属性，这个css3动画的每一帧是通过@keyframes来声明的，keyframes声明了动画的名称，通过from、to或者是百分比来定义<br>每一帧动画元素的状态，通过animation-name来引用这个动画，同时css3动画也可以定义动画运行的时长、动画开始时间、动画播放方向、动画循环次数、动画播放的方式，<br>这些相关的动画子属性有：animation-name定义动画名、animation-duration定义动画播放的时长、animation-delay定义动画延迟播放的时间、animation-direction定义<br>动画的播放方向、animation-iteration-count定义播放次数、animation-fill-mode定义动画播放之后的状态、animation-play-state定义播放状态，如暂停运行等、animation-timing-function<br>定义播放的方式，如恒速播放、艰涩播放等。</p>
+<h3 id="11-绝对定位和相对定位的区别？"><a href="#11-绝对定位和相对定位的区别？" class="headerlink" title="11.绝对定位和相对定位的区别？"></a>11.绝对定位和相对定位的区别？</h3><p>绝对定位是相对于最近的已经定位的祖先元素，没有则相对于body，绝对定位脱离文档流，而相对定位是相对于元素在文档中的初始位置，并且<br>相对定位的元素仍然占据原有的空间。</p>
+<p>参考：</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Positioning" target="_blank" rel="noopener">MDN Positioning</a></p>
+<h3 id="12-说一下你了解的CSS选择器？"><a href="#12-说一下你了解的CSS选择器？" class="headerlink" title="12.说一下你了解的CSS选择器？"></a>12.说一下你了解的CSS选择器？</h3><p>参考：</p>
+<p><a href="http://www.w3school.com.cn/cssref/css_selectors.asp" target="_blank" rel="noopener">CSS 选择器参考手册</a></p>
+<h3 id="13-BFC是什么？介绍一下，如何触发BFC？"><a href="#13-BFC是什么？介绍一下，如何触发BFC？" class="headerlink" title="13.BFC是什么？介绍一下，如何触发BFC？"></a>13.BFC是什么？介绍一下，如何触发BFC？</h3><p>BFC也就是常说的块格式化上下文，这是一个独立的渲染区域，规定了内部如何布局，并且这个区域的子元素不会影响到外面的元素。其中比较重要的布局规则有内部box垂直放置、计算BFC的高度的时候，浮动元素也参与计算。<br>触发BFC的规则有根元素、浮动元素、position为absolute或fixed的元素、display属性为inline-block、table-cell、table-caption、flex、inline-fllex、overflow不为visible的元素。</p>
+<p>参考：</p>
+<p><a href="http://www.cnblogs.com/lhb25/p/inside-block-formatting-ontext.html" target="_blank" rel="noopener">前端精选文摘：BFC 神奇背后的原理</a></p>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Block_formatting_context" target="_blank" rel="noopener">块格式化上下文</a></p>
+<h3 id="14-CSS3动画如何实现暂停？"><a href="#14-CSS3动画如何实现暂停？" class="headerlink" title="14.CSS3动画如何实现暂停？"></a>14.CSS3动画如何实现暂停？</h3><p>css3动画可以通过设置animation-play-state属性为paused来设置这个动画暂停。</p>
+<h3 id="15-说一说你知道哪些伪类选择器？"><a href="#15-说一说你知道哪些伪类选择器？" class="headerlink" title="15.说一说你知道哪些伪类选择器？"></a>15.说一说你知道哪些伪类选择器？</h3><h3 id="16-简要介绍一下一种css预处理器？"><a href="#16-简要介绍一下一种css预处理器？" class="headerlink" title="16.简要介绍一下一种css预处理器？"></a>16.简要介绍一下一种css预处理器？</h3>
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
+    </div>
+</article>
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>CSS</p>
+    
+    <p><span class="copy-title">本文作者:</span><a  title="FEI">FEI</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-12-13, 20:04:05</p>
+    <p><span class="copy-title">最后更新:</span>2019-11-24, 22:10:24</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/12/13/CSS/" title="CSS">https://l1ufe1.github.io/2019/12/13/CSS/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">©2016-2019 Yelog</p>

@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Hexo测试</title>
+  <title>Angular | Hexo测试</title>
   <meta name="keywords" content="">
-  <meta name="description" content="Hexo测试">
+  <meta name="description" content="Angular | Hexo测试">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Web安全1.常见的网站漏洞有哪些？有跨站脚本攻击（XSS）、跨站请求伪造（CSRF）、点击劫持、SQL注入、DDOS攻击、DNS劫持 2.简要介绍一下XSS以及XSS如何防御跨站脚本攻击是说攻击者通过注入恶意的脚本，在用户浏览网页的时候进行攻击，比如获取cookie或者其他用户身份信息。可以分为存储型和反射型，存储型是攻击者输入一些数据并且存储到了数据库中，其他浏览者看到的时候进行攻击，反射型的">
 <meta property="og:type" content="article">
@@ -52,7 +52,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -389,12 +389,43 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-Angular" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于叶落阁"><span class="toc-text">关于叶落阁</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">Angular</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2019-11-24 22:10:24'>2019-12-13 20:04</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#AngularJS"><span class="toc-text">AngularJS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-依赖注入的原理，如何实现一个简单的依赖注入"><span class="toc-text">1.依赖注入的原理，如何实现一个简单的依赖注入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-什么是脏检查？"><span class="toc-text">2.什么是脏检查？</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -407,36 +438,48 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><p>喜欢写Blog的人，会经历三个阶段。</p>
-<blockquote>
-<p>第一阶段，刚接触Blog，觉得很新鲜，试着选择一个免费空间来写。</p>
-</blockquote>
-<blockquote>
-<p>第二阶段，发现免费空间限制太多，就自己购买域名和空间，搭建独立博客。</p>
-</blockquote>
-<blockquote>
-<p>第三阶段，觉得独立博客的管理太麻烦，最好在保留控制权的前提下，让别人来管，自己只负责写文章。</p>
-</blockquote>
-<p>我们每个人的在网络上产生的数据越来越多，这些信息是我们在互联网上存在过的痕迹，值得我们认真对待。但是它们被分散分布在各个网站上。很多时候我们很难将它们聚合在一起，而且各个网站的信息排布方式也没有办法自由控制，所以我们需要一个可以由自己主宰的空间——博客。</p>
-<p>通过博客，我们可以记录自己的生活和成长的轨迹。它不像 Twitter 那样碎片化，也不像 Facebook 那样关系化，它是私人的空间。</p>
-<h2 id="关于叶落阁"><a href="#关于叶落阁" class="headerlink" title="关于叶落阁"></a>关于叶落阁</h2><p><strong>叶落阁</strong> 是阿杰（杨玉杰）的个人站。</p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源</p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)、作者(@作者)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
-</ul>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="AngularJS"><a href="#AngularJS" class="headerlink" title="AngularJS"></a>AngularJS</h2><h3 id="1-依赖注入的原理，如何实现一个简单的依赖注入"><a href="#1-依赖注入的原理，如何实现一个简单的依赖注入" class="headerlink" title="1.依赖注入的原理，如何实现一个简单的依赖注入"></a>1.依赖注入的原理，如何实现一个简单的依赖注入</h3><p>依赖注入原理通俗的说就是当一个函数需要某些对象的时候，这个函数只需要指明自己需要的对象，就会有一个容器<br>将这些对象自动传递给这个函数，在angularjs中的具体表现比如说我们定义了一个service，就可以在控制器中将这个<br>service作为参数使用。实现一个简答的依赖注入需要一个注册函数来作为依赖的注册，可以利用一个对象来实现注册依赖<br>的保存。一个注入函数来实现注入，注册函数很好处理，只需要将依赖的名字和对应的函数保存在依赖对象即可，而注入函数显然<br>需要的参数是一个声明依赖的数组，一个逻辑函数，对这个依赖数组遍历查看是否注册，使用hasOwnProperty是比较好的方法，<br>如果没有注册则放弃，注册了就将他push到一个数组中，最后返回一个function，这个function只需要使用apply方法将数组<br>作为参数传递给注入函数中的函数参数即可实现。</p>
+<p>如何实现注入函数忽略参数传递的顺序？</p>
+<p>可以利用正则去解析注册函数的参数，将注入函数中函数参数的参数解析出来，然后逐个去依赖中查询即可，这会带来的问题就是如果<br>压缩的话，这些参数会被一些简单的字母代替，也就意味着失效，angularjs的解决方式使用数组作为参数，数组最后一个就是依赖注入的函数<br>，当然这得保持依赖的顺序。</p>
+<p>参考：</p>
+<p><a href="http://www.alloyteam.com/2015/09/angularjs-study-of-dependency-injection/" target="_blank" rel="noopener">AngularJs依赖注入的研究</a></p>
+<h3 id="2-什么是脏检查？"><a href="#2-什么是脏检查？" class="headerlink" title="2.什么是脏检查？"></a>2.什么是脏检查？</h3><p>脏检查是Angularjs的视图更新机制，Angularjs就是通过脏检查来检测数据是否变动，在angular中，只有一些特定的事件才能触发脏值检查<br>比如：DOM事件（比如：用户输入点击按钮）、XHR响应事件、Location变更事件、定时器事件等。</p>
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>Angular</p>
+    
+    <p><span class="copy-title">本文作者:</span><a  title="FEI">FEI</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-12-13, 20:04:05</p>
+    <p><span class="copy-title">最后更新:</span>2019-11-24, 22:10:24</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/12/13/Angular/" title="Angular">https://l1ufe1.github.io/2019/12/13/Angular/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">©2016-2019 Yelog</p>

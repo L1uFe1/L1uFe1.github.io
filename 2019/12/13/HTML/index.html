@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Hexo测试</title>
+  <title>HTML | Hexo测试</title>
   <meta name="keywords" content="">
-  <meta name="description" content="Hexo测试">
+  <meta name="description" content="HTML | Hexo测试">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Web安全1.常见的网站漏洞有哪些？有跨站脚本攻击（XSS）、跨站请求伪造（CSRF）、点击劫持、SQL注入、DDOS攻击、DNS劫持 2.简要介绍一下XSS以及XSS如何防御跨站脚本攻击是说攻击者通过注入恶意的脚本，在用户浏览网页的时候进行攻击，比如获取cookie或者其他用户身份信息。可以分为存储型和反射型，存储型是攻击者输入一些数据并且存储到了数据库中，其他浏览者看到的时候进行攻击，反射型的">
 <meta property="og:type" content="article">
@@ -52,7 +52,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -389,12 +389,43 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-HTML" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于叶落阁"><span class="toc-text">关于叶落阁</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">HTML</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2019-11-24 22:10:24'>2019-12-13 20:04</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#HTML-5"><span class="toc-text">HTML(5)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-viewport的常见设置有哪些"><span class="toc-text">1.viewport的常见设置有哪些</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-简要介绍HTML5的新特性"><span class="toc-text">2.简要介绍HTML5的新特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-HTML5的存储方案有哪些"><span class="toc-text">3.HTML5的存储方案有哪些</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-块级元素和行内元素有哪些？"><span class="toc-text">4.块级元素和行内元素有哪些？</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -407,36 +438,60 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><p>喜欢写Blog的人，会经历三个阶段。</p>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="HTML-5"><a href="#HTML-5" class="headerlink" title="HTML(5)"></a>HTML(5)</h2><h3 id="1-viewport的常见设置有哪些"><a href="#1-viewport的常见设置有哪些" class="headerlink" title="1.viewport的常见设置有哪些"></a>1.viewport的常见设置有哪些</h3><p>viewport常常使用在响应式开发以及移动web开发中，viewport顾名思义就是用来设置视口，主要是规定视口的宽度、视口的初始缩放值、<br>视口的最小缩放值、视口的最大缩放值、是否允许用户缩放等。一个常见的viewport设置如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span>  <span class="attr">content</span>=<span class="string">"initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<p>其中同时设置width和initial-scale的目的是为了解决iphone、ipad、ie横竖屏不分的情况，因为这两个值同时存在时会取较大值。</p>
+<p>参考：</p>
 <blockquote>
-<p>第一阶段，刚接触Blog，觉得很新鲜，试着选择一个免费空间来写。</p>
+<p><a href="https://www.quirksmode.org/mobile/viewports.html" target="_blank" rel="noopener">A tale of two viewports — part one</a> <a href="http://weizhifeng.net/viewports.html" target="_blank" rel="noopener">(译)</a></p>
 </blockquote>
 <blockquote>
-<p>第二阶段，发现免费空间限制太多，就自己购买域名和空间，搭建独立博客。</p>
+<p><a href="https://www.quirksmode.org/mobile/viewports2.html" target="_blank" rel="noopener">A tale of two viewports — part two</a> <a href="http://weizhifeng.net/viewports2.html" target="_blank" rel="noopener">(译)</a></p>
 </blockquote>
 <blockquote>
-<p>第三阶段，觉得独立博客的管理太麻烦，最好在保留控制权的前提下，让别人来管，自己只负责写文章。</p>
+<p><a href="https://www.quirksmode.org/mobile/metaviewport/" target="_blank" rel="noopener">Meta viewport</a></p>
 </blockquote>
-<p>我们每个人的在网络上产生的数据越来越多，这些信息是我们在互联网上存在过的痕迹，值得我们认真对待。但是它们被分散分布在各个网站上。很多时候我们很难将它们聚合在一起，而且各个网站的信息排布方式也没有办法自由控制，所以我们需要一个可以由自己主宰的空间——博客。</p>
-<p>通过博客，我们可以记录自己的生活和成长的轨迹。它不像 Twitter 那样碎片化，也不像 Facebook 那样关系化，它是私人的空间。</p>
-<h2 id="关于叶落阁"><a href="#关于叶落阁" class="headerlink" title="关于叶落阁"></a>关于叶落阁</h2><p><strong>叶落阁</strong> 是阿杰（杨玉杰）的个人站。</p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源</p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)、作者(@作者)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
-</ul>
+<h3 id="2-简要介绍HTML5的新特性"><a href="#2-简要介绍HTML5的新特性" class="headerlink" title="2.简要介绍HTML5的新特性"></a>2.简要介绍HTML5的新特性</h3><p>首先HTML5为了更好的实践Web语义化，增加了header、footer、nav、aside、article、section等语义化标签。<br>在表单方面，为了增强表单，为input增加color、email、date、range等类型，在存储方面提供了sessionStorage<br>、localStorage和离线存储，通过这些存储方式方便数据在客户端的存储和获取，在多媒体方面规定了音频和视频元素audio和vedio；<br>另外还有地理定位、canvas画布、拖放、多线程编程的web workers和websocket协议</p>
+<h3 id="3-HTML5的存储方案有哪些"><a href="#3-HTML5的存储方案有哪些" class="headerlink" title="3.HTML5的存储方案有哪些"></a>3.HTML5的存储方案有哪些</h3><p>HTML5提供了sessionStorage、localStorage和离线存储作为新的存储方案，其中sessionStorage和localStorage<br>都是采用键值对的形式存储，两者都是通过setItem、getItem、removeItem来实现增删查改，而sessionStorage是会话存储，也就是说<br>当浏览器关闭之后sessionStorage也自动清空了，而localStorage不会，它没有时间上的限制。离线存储也就是应用程序缓存，这个通常用来<br>确保web应用能够在离线情况下使用，通过在html标签中属性manifest来声明需要缓存的文件，这个属性的值是一个包含需要缓存的文件的文件名的文件，<br>这个manifest文件声明的缓存文件可在初次加载后缓存在客户端，可以通过更新这个manifest文件来达到更新缓存文件的目的。</p>
+<h3 id="4-块级元素和行内元素有哪些？"><a href="#4-块级元素和行内元素有哪些？" class="headerlink" title="4.块级元素和行内元素有哪些？"></a>4.块级元素和行内元素有哪些？</h3><p>块级元素有表示布局类的div、section、header、footer、aside、nav、article等，列表类ul li、ol之类的，form、p、table、标题h1~h6<br>行内元素：a、span、button、input、select、textarea、i、em、strong</p>
+<p>参考：</p>
+<p><a href="http://www.jianshu.com/p/0122c846a0bd" target="_blank" rel="noopener">前端入门培训（一）</a></p>
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>HTML</p>
+    
+    <p><span class="copy-title">本文作者:</span><a  title="FEI">FEI</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-12-13, 20:04:05</p>
+    <p><span class="copy-title">最后更新:</span>2019-11-24, 22:10:24</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/12/13/HTML/" title="HTML">https://l1ufe1.github.io/2019/12/13/HTML/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">©2016-2019 Yelog</p>
